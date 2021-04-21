@@ -7,4 +7,4 @@ connectDB();
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/notes', require('./routes/api/notes'));
-app.listen(3000, ()=>console.log("Server lis listening at 3000..."));
+app.listen(3080, ()=>console.log("Server lis listening at 3080..."));

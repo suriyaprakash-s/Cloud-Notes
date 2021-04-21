@@ -1,0 +1,29 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: darkslategray;
+    color: white;
+    position:fixed;
+    top:0px;
+}
+.navbar h3{
+    padding-left: 10px;
+    cursor: pointer;
+}
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+.navbar li{
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.navbar span{
+    display:flex;
+}

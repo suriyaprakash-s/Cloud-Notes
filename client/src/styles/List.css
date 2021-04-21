@@ -1,0 +1,35 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    padding: 0px 40px;
+}
+.list .menu-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+}
+.list .custom-table{
+    margin-top: 20px;
+    display: table;
+    width: 70%;
+    border-collapse: collapse;
+}
+.list >div>span{
+    display: table-row;
+    text-align: center;
+    font-weight: bold;
+}
+.list div{
+    display: table-row;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    background-color: #fafafa;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+.list div span{
+    text-align: center;
+    display: table-cell;
+    padding: 4px;
+}

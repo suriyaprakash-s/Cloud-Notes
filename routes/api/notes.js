@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', auth, async(req, res)=>{
     try {
-        const notes = await Note.find().select('-content -user').sort({date: -1});
+        const notes = await Note.find({user:req.user.id}).select('-content -user').sort({date: -1});
         res.json(notes);
     } catch (error) {
         console.error(error.messgae);
@@ -50,12 +50,19 @@ router.post('/', [auth,
 
 router.put('/:id', [auth, checkObjectId('id'), check('title', 'Title is required').notEmpty()], async(req, res)=>{
     try{
-        const updateNote = { title: req.body.title,
-            content:req.body.content,
-            date: Date.now()
+        const note = await Note.findById(req.params.id);
+        if(note.user.toString() === req.user.id)
+        {
+            note.title=req.body.title;
+            note.content=req.body.content;
+            note.date=Date.now();
+            await note.save();
+            res.json(note);
         }
-        const note = await Note.findOneAndUpdate(req.user.id, {$set: updateNote},{ new: true, upsert: true, setDefaultsOnInsert: true });
-        res.json(note);
+        else{
+            res.status(401).json({msg:'UnAuthorized'});
+        }
+
     }catch(error){
         console.error(error.message);
         res.status(500).json('Server Error');

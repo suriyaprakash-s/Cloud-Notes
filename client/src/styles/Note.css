@@ -1,0 +1,31 @@
+.note{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding: 0px 40px;
+}
+.title{
+    padding-bottom: 30px;
+}
+.title input{
+    width:70%;
+    font-size: 14px;
+}
+.note label{
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+}
+.content textarea{
+    height: auto;
+    width: auto;
+    font-size: 14px;
+}
+.actions{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px 0px 0px;
+}

@@ -1,0 +1,18 @@
+.landing{
+    background-color: #079EBA;
+    height: calc(100vh - 50px);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-top: 50px;
+}
+.landing h3,p{
+    margin:6px;
+}
+.landing p span{
+    text-decoration: underline;
+    cursor: pointer;
+}
